@@ -163,9 +163,9 @@ The project was simulated using Tinkercad Circuits. The simulation includes the 
 
 Tinkercad Link
 
-Add your Tinkercad share link here:
+ Tinkercad share link here:
 
-YOUR_TINKERCAD_LINK
+https://www.tinkercad.com/things/9GuOVfRx1Rw-project/editel
 
 📊 Testing and Results
 
