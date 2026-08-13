@@ -1,1 +1,98 @@
+#include <Wire.h> 
+#include <LiquidCrystal_I2C.h>
 
+LiquidCrystal_I2C lcd(0x27, 16, 2); // Adjust the address and dimensions according to your LCD
+
+// Declaration of trigger and echo pins
+const int trigPin = 9;    // TRIG pin 
+const int echoPin = 10;   // ECHO pin 
+const int ledPinR = 13;
+const int ledPinG = 12;
+
+// Declaration of variables going to be used for the program
+float duration_us, distance_cm;
+float distance1 = 0;
+float distance2 = 0;
+float measured_speed = 0;
+unsigned long previousMillis = 0;
+const long interval = 1000; // Interval between distance measurements in milliseconds
+
+void setup() {
+    // Setting trigger pin as OUTPUT
+    pinMode(trigPin, OUTPUT);
+    // Setting echoPin as INPUT
+    pinMode(echoPin, INPUT);
+    // Starts the serial communication at baud rate 9600
+    Serial.begin(9600);
+    // Initialize the LCD
+    lcd.init();
+    lcd.backlight();
+    pinMode(ledPinR, OUTPUT);
+    pinMode(ledPinG, OUTPUT);
+}
+
+void loop() {
+    unsigned long currentMillis = millis();
+    // Check if it's time to measure distance again
+    if (currentMillis - previousMillis >= interval) {
+        // Measuring distance 1
+        distance1 = ultrasonicRead();
+        delay(1000); // Wait for a moment before taking the second measurement
+        distance2 = ultrasonicRead();
+        // Formula to calculate speed from distance1 and distance2
+        // Calculate the time elapsed between the two distance measurements
+        float elapsedTime = (currentMillis - previousMillis) / 1000.0; // Convert milliseconds to seconds
+        measured_speed = abs(distance2 - distance1) / elapsedTime;
+        // Displaying the speed value on the LCD
+        lcd.clear();
+        lcd.setCursor(0, 1);
+        lcd.print("Speed:");
+        lcd.setCursor(6,1);
+        lcd.print(measured_speed);
+        // Update previousMillis
+        previousMillis = currentMillis;
+    }
+
+    // generate 10-microsecond pulse to TRIG pin 
+    digitalWrite(trigPin, HIGH); 
+    delayMicroseconds(10); 
+    digitalWrite(trigPin, LOW); 
+ 
+    // measure duration of pulse from ECHO pin 
+    duration_us = pulseIn(echoPin, HIGH); 
+ 
+    // calculate the distance 
+    distance_cm = 0.017 * duration_us; 
+  
+    lcd.setCursor(0, 0); // start to print at the first row 
+    lcd.print("Distance: "); 
+    lcd.print(distance_cm);
+    lcd.setCursor(11,1);
+    lcd.print("km/hr");
+
+    // Control LED based on distance
+    if(distance_cm < 200 ) {
+        digitalWrite(ledPinR, HIGH);
+        digitalWrite(ledPinG, LOW);
+    } else {
+        digitalWrite(ledPinR, LOW);
+        digitalWrite(ledPinG, HIGH);
+    }
+
+    delay(500);
+}
+
+// Function declaration to measure the distance based on the working principle of ultrasonic sensor
+float ultrasonicRead() {
+    // Sets the trigPin on HIGH state for 10 micro seconds
+    digitalWrite(trigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW);
+    // Waits for the amount of time echoPin remains high and records the duration of the same
+    long duration = pulseIn(echoPin, HIGH);
+    // Calculates the distance based on the speed of sound in ambient air 
+    // and divide it by two since the sound traveled twice - once to the object and then back
+    float distance = duration * 0.034 / 2;
+    // Returning measured distance
+    return distance;
+}
