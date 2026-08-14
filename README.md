@@ -172,7 +172,8 @@ When the detected distance is outside the configured threshold:
 
 - Red LED turns OFF.
 - Green LED turns ON.
-- LCD displays **"Clear Path Ahead"**.
+- LCD displays distance.
+- LCD displays estimated speed.
 
 The project report also describes testing under both-side detection, single-side detection, and no-detection scenarios.
 ---
