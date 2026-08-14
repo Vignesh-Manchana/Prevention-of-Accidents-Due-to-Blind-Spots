@@ -122,7 +122,7 @@ Add your Tinkercad share link here:
 
 ```text
 https://www.tinkercad.com/things/9GuOVfRx1Rw-project/editel
---
+```
 ---
 ## 🔄 Overall Workflow
 
@@ -132,10 +132,10 @@ flowchart TD
     B --> C[Initialize HC-SR04 Ultrasonic Sensor]
     C --> D[Initialize I2C LCD]
     D --> E[Initialize Red and Green LEDs]
-    E --> F[Detect Vehicle / Object]
+    E --> F[Detect Vehicle or Object]
 
     F --> G[Measure Distance]
-    G --> H{Distance < 35 cm?}
+    G --> H{Distance less than 35 cm?}
 
     H -->|Yes| I[Vehicle Detected]
     I --> J[Calculate Distance and Speed]
@@ -144,7 +144,7 @@ flowchart TD
     L --> M[Green LED OFF]
 
     H -->|No| N[Clear Path]
-    N --> O[Display "Clear Path Ahead"]
+    N --> O[Display Clear Path Ahead]
     O --> P[Green LED ON]
     P --> Q[Red LED OFF]
 
@@ -152,8 +152,7 @@ flowchart TD
     Q --> R
 
     R --> F
----
-
+```
 ## 📊 Testing and Results
 
 The project was tested under different vehicle-detection scenarios.
