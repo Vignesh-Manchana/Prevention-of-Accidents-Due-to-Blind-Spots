@@ -210,9 +210,9 @@ The project report identifies several possible improvements:
 ---
 ## 👨‍💻 Project Team
 
-**Manchana Vignesh**
-**P. Ambarish**  
-**KVS. Karthik**  
+-**Manchana Vignesh**
+-**P. Ambarish**  
+-**KVS. Karthik**  
 
 **Department of Electronics and Communication Engineering**  
 **Vasavi College of Engineering, Hyderabad**
