@@ -135,7 +135,7 @@ flowchart TD
     E --> F[Detect Vehicle or Object]
 
     F --> G[Measure Distance]
-    G --> H{Distance less than 35 cm?}
+    G --> H{Distance less than 200 cm?}
 
     H -->|Yes| I[Vehicle Detected]
     I --> J[Calculate Distance and Speed]
