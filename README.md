@@ -132,7 +132,7 @@ flowchart TD
     B --> C[Initialize HC-SR04 Ultrasonic Sensor]
     C --> D[Initialize I2C LCD]
     D --> E[Initialize Red and Green LEDs]
-    E --> F[Detect Vehicle or Object]
+    E --> F[Detect Vehicle ]
 
     F --> G[Measure Distance]
     G --> H{Distance less than 200 cm?}
