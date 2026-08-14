@@ -144,7 +144,7 @@ flowchart TD
     L --> M[Green LED OFF]
 
     H -->|No| N[Clear Path]
-    N --> O[Display Clear Path Ahead]
+    N --> O[Display Distance and Speed on LCD]
     O --> P[Green LED ON]
     P --> Q[Red LED OFF]
 
