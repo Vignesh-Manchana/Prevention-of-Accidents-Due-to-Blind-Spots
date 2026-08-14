@@ -118,7 +118,7 @@ The project was simulated using **Tinkercad Circuits**. The simulation includes 
 
 ### Tinkercad Link
 
-Add your Tinkercad share link here:
+ Tinkercad link here:
 
 ```text
 https://www.tinkercad.com/things/9GuOVfRx1Rw-project/editel
