@@ -148,7 +148,9 @@ When the detected distance is outside the configured threshold:
 - LCD displays **"Clear Path Ahead"**.
 
 The project report also describes testing under both-side detection, single-side detection, and no-detection scenarios.
+---
 
+## 📁 Repository Structure
 
 
 
@@ -164,7 +166,17 @@ The project report identifies several possible improvements:
 - Weather-resistant LCD displays.
 - Improved hardware suitable for real-world road environments.
 - Improved detection and alert mechanisms for curved mountain roads.
+---
+## 👨‍💻 Project Team
 
+**Manchana Vignesh**
+**P. Ambarish**  
+**KVS. Karthik**  
+
+**Department of Electronics and Communication Engineering**  
+**Vasavi College of Engineering, Hyderabad**
+
+--
 
 
 
