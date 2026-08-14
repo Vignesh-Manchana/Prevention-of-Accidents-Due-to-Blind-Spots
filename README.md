@@ -123,7 +123,34 @@ Add your Tinkercad share link here:
 ```text
 https://www.tinkercad.com/things/9GuOVfRx1Rw-project/editel
 ```
+## 🔄 Overall Workflow
 
+```mermaid
+flowchart TD
+    A([Start]) --> B[Initialize Arduino]
+    B --> C[Initialize HC-SR04 Ultrasonic Sensor]
+    C --> D[Initialize I2C LCD]
+    D --> E[Initialize Red and Green LEDs]
+    E --> F[Detect Vehicle / Object]
+
+    F --> G[Measure Distance]
+    G --> H{Distance < 35 cm?}
+
+    H -->|Yes| I[Vehicle Detected]
+    I --> J[Calculate Distance and Speed]
+    J --> K[Display Distance and Speed on LCD]
+    K --> L[Red LED ON]
+    L --> M[Green LED OFF]
+
+    H -->|No| N[Clear Path]
+    N --> O[Display "Clear Path Ahead"]
+    O --> P[Green LED ON]
+    P --> Q[Red LED OFF]
+
+    M --> R[Continue Monitoring]
+    Q --> R
+
+    R --> F
 ---
 
 ## 📊 Testing and Results
@@ -149,10 +176,23 @@ When the detected distance is outside the configured threshold:
 
 The project report also describes testing under both-side detection, single-side detection, and no-detection scenarios.
 ---
-
 ## 📁 Repository Structure
 
-
+```text
+Project-Details/
+│
+├── Arduino_code
+│   └── Arduino source code for ultrasonic sensor and LCD speed display
+│
+├── PROTOTYPE_DEMO.mp4
+│   └── Demonstration video of the physical project prototype
+│
+├── Presention
+│   └── Project presentation
+│
+└── README.md
+    └── Project documentation and details
+```
 
 ---
 
