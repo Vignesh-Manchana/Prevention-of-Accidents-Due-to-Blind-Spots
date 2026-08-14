@@ -12,7 +12,7 @@ The project was tested using **Tinkercad simulation** and demonstrated using a p
 
 ## 🎯 Problem Statement
 
-Mountain roads, narrow roads, sharp curves, and T-junctions can create blind spots where drivers cannot see vehicles or obstacles approaching from the other side.
+Mountain roads, narrow roads, sharp curves, and U-junctions can create blind spots where drivers cannot see vehicles or obstacles approaching from the other side.
 
 Limited visibility combined with vehicle speed can reduce the driver's reaction time and increase the possibility of collisions or vehicles leaving the road.
 
