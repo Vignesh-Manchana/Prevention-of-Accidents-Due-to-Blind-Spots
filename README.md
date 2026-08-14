@@ -122,7 +122,8 @@ Add your Tinkercad share link here:
 
 ```text
 https://www.tinkercad.com/things/9GuOVfRx1Rw-project/editel
-```
+--
+---
 ## 🔄 Overall Workflow
 
 ```mermaid
@@ -151,8 +152,8 @@ flowchart TD
     Q --> R
 
     R --> F
-
 ---
+
 ## 📊 Testing and Results
 
 The project was tested under different vehicle-detection scenarios.
